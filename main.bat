@@ -1,10 +1,12 @@
 @echo off
 
 :: Add classic RMB context menu to Windows 11
-:: reg add HKEY_CURRENT_USER\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32 /f /ve
+@echo Adding classic RMB context menu.
+reg add HKEY_CURRENT_USER\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32 /f /ve
 
 :: Show file extensions
-:: reg add HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced /v HideFileExt /t REG_DWORD /d 0x0 /f
+@echo Turning on file extensions.
+reg add HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced /v HideFileExt /t REG_DWORD /d 0x0 /f
 
 :: Downloads python
 :: TO-DO: Check if Python package already exists
@@ -27,4 +29,4 @@ IF %ERRORLEVEL% EQU 0 (
 
 :: TO-DO:
 :: start python env
-:: dowbload and install latest software
+:: download and install latest software
